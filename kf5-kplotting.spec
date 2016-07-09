@@ -1,15 +1,15 @@
-%define		kdeframever	5.19
+%define		kdeframever	5.23
 %define		qtver		5.3.2
 %define		kfname		kplotting
 #
 Summary:	Data plotting
 Name:		kf5-%{kfname}
-Version:	5.19.0
+Version:	5.23.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	7487f642bc0c0ed9a38e68c4ef21ff2c
+# Source0-md5:	4acdf183309dfbee324dfae7f2169cf5
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Gui-devel >= 5.3.1
@@ -20,6 +20,7 @@ BuildRequires:	kf5-extra-cmake-modules >= 1.0.0
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+Requires:	kf5-dirs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		qt5dir		%{_libdir}/qt5
