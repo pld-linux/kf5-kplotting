@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.112
+%define		kdeframever	5.113
 %define		qtver		5.15.2
 %define		kfname		kplotting
 #
 Summary:	Data plotting
 Name:		kf5-%{kfname}
-Version:	5.112.0
+Version:	5.113.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	3beb07ade77f12d3c0e7d3df3fa19b0d
+# Source0-md5:	1668a8040e66b8d5df8f6576d8543e52
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5Gui-devel >= 5.3.1
