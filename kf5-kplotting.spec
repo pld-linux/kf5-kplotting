@@ -1,23 +1,23 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.249.0
+%define		kdeframever	5.114
 %define		qtver		5.15.2
 %define		kfname		kplotting
 #
 Summary:	Data plotting
 Name:		kf5-%{kfname}
-Version:	5.249.0
-Release:	0.1
+Version:	5.114.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/unstable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	ba5bd1f6950a2f0d33bb04598ac12592
+Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
+# Source0-md5:	eddd520933e9eb9245334edf454c5a5d
 URL:		http://www.kde.org/
-BuildRequires:	Qt6Core-devel
-BuildRequires:	Qt6Gui-devel >= 5.3.1
-BuildRequires:	Qt6Test-devel
-BuildRequires:	Qt6Widgets-devel
+BuildRequires:	Qt5Core-devel
+BuildRequires:	Qt5Gui-devel >= 5.3.1
+BuildRequires:	Qt5Test-devel
+BuildRequires:	Qt5Widgets-devel
 BuildRequires:	cmake >= 3.16
 BuildRequires:	kf5-extra-cmake-modules >= %{version}
 BuildRequires:	ninja
@@ -27,7 +27,7 @@ BuildRequires:	xz
 Requires:	kf5-dirs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		qt6dir		%{_libdir}/qt6
+%define		qt5dir		%{_libdir}/qt5
 
 %description
 KPlotWidget is a QWidget-derived class that provides a virtual base
@@ -88,12 +88,13 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.md
-%ghost %{_libdir}/libKF6Plotting.so.6
-%attr(755,root,root) %{_libdir}/libKF6Plotting.so.*.**
-%attr(755,root,root) %{qt6dir}/plugins/designer/kplotting6widgets.so
+%ghost %{_libdir}/libKF5Plotting.so.5
+%attr(755,root,root) %{_libdir}/libKF5Plotting.so.*.**
+%attr(755,root,root) %{qt5dir}/plugins/designer/kplotting5widgets.so
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/KF6/KPlotting
-%{_libdir}/cmake/KF6Plotting
-%{_libdir}/libKF6Plotting.so
+%{_includedir}/KF5/KPlotting
+%{_libdir}/cmake/KF5Plotting
+%{_libdir}/libKF5Plotting.so
+%{qt5dir}/mkspecs/modules/qt_KPlotting.pri
